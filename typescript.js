@@ -4,7 +4,7 @@ const basic = require('./basic')
 module.exports = {
 	plugins: ['@typescript-eslint', 'unused-imports'],
 	extends: [
-		'./basic',
+		'@innocenzi/eslint-config/basic',
 		'plugin:@typescript-eslint/recommended',
 	],
 	overrides: basic.overrides,

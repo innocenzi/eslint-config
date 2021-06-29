@@ -3,7 +3,10 @@ module.exports = {
 		parser: require.resolve('@typescript-eslint/parser'),
 		extraFileExtensions: ['.vue'],
 	},
-	extends: ['./typescript', 'plugin:vue/vue3-recommended'],
+	extends: [
+		'@innocenzi/eslint-config/typescript',
+		'plugin:vue/vue3-recommended',
+	],
 	overrides: [
 		{
 			files: ['*.vue'],
