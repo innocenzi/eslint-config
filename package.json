@@ -24,6 +24,7 @@
     "typescript": "^4.0.0"
   },
   "devDependencies": {
+    "apply": "^0.2.17",
     "eslint": "^7.17.0",
     "standard-version": "^9.3.0",
     "typescript": "^4.0.0",
@@ -32,8 +33,6 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
-    "eslint-plugin-unused-imports": "^1.1.1",
-    "eslint-plugin-vue": "^7.3.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-html": "^6.1.2",
@@ -42,6 +41,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-unicorn": "^28.0.2",
+    "eslint-plugin-unused-imports": "^1.1.1",
+    "eslint-plugin-vue": "^7.3.0",
     "eslint-plugin-yml": "^0.8.1",
     "jsonc-eslint-parser": "^1.0.1",
     "yaml-eslint-parser": "^0.3.2"
