@@ -1,10 +1,17 @@
-# `@innocenzi/eslint-config`
+# ESLint config
 
-Personal presets used in my projects.
+- `@innocenzi/eslint-config/typescript` (default)
+- `@innocenzi/eslint-config/basic`
+- `@innocenzi/eslint-config/vue`
 
-Included:
+```shell
+npm i @innocenzi/eslint-config
+yarn add @innocenzi/eslint-config
+```
 
-- @typescript-eslint
-- eslint-plugin-unused-imports
-- Vue support (default)
-  - optional without vue via `@innocenzi/eslint-config/no-vue`
+```json
+// eslintrc.json
+{
+	"extends": "@innocenzi/eslint-config"
+}
+```
