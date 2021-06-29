@@ -2,7 +2,7 @@
   "name": "@innocenzi/eslint-config",
   "author": "Enzo Innocenzi",
   "repository": "https://github.com/innocenzi/eslint-config.git",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Personal ESLint configuration",
   "license": "MIT",
   "publishConfig": {
@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "lint": "eslint *.js",
-		"release": "standard-version --skip.changelog"
+    "release": "standard-version --skip.changelog"
   },
   "peerDependencies": {
     "eslint": "^7.17.0",
