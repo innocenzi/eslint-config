@@ -1,22 +1,22 @@
 module.exports = {
-	parserOptions: {
-		parser: require.resolve('@typescript-eslint/parser'),
-		extraFileExtensions: ['.vue'],
-	},
 	extends: [
-		'@innocenzi/eslint-config/typescript',
 		'plugin:vue/vue3-recommended',
+		'@innocenzi/eslint-config/typescript',
 	],
 	overrides: [
 		{
 			files: ['*.vue'],
+			parser: 'vue-eslint-parser',
+			parserOptions: {
+				parser: '@typescript-eslint/parser',
+			},
 			rules: {
-				'no-unused-imports': 'off',
 				'no-unused-vars': 'off',
+				'@typescript-eslint/no-unused-vars': 'off',
+				'no-unused-imports': 'off',
 				'unused-imports/no-unused-imports': 'off',
 				'unused-imports/no-unused-vars': 'off',
 				'@typescript-eslint/no-unused-imports': 'off',
-				'@typescript-eslint/no-unused-vars': 'off',
 			},
 		},
 	],
