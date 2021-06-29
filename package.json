@@ -2,7 +2,7 @@
   "name": "@innocenzi/eslint-config",
   "author": "Enzo Innocenzi",
   "repository": "https://github.com/innocenzi/eslint-config.git",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Personal ESLint configuration",
   "license": "MIT",
   "publishConfig": {
