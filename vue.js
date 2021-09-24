@@ -18,6 +18,11 @@ module.exports = {
 				'unused-imports/no-unused-vars': 'off',
 				'@typescript-eslint/no-unused-imports': 'off',
 			},
+			globals: {
+				defineProps: 'readonly',
+				defineEmits: 'readonly',
+				defineExpose: 'readonly',
+			}
 		},
 	],
 	rules: {
