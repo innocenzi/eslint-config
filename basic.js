@@ -203,6 +203,8 @@ module.exports = {
 		'unicorn/prefer-type-error': 'error',
 		// Use new when throwing error
 		'unicorn/throw-new-error': 'error',
+		// Enforce using node: protocol
+		'unicorn/prefer-node-protocol': 'error',
 
 		'no-use-before-define': [
 			'error',
