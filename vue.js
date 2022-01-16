@@ -36,6 +36,7 @@ module.exports = {
 			},
 			svg: 'always',
 			math: 'always',
+			template: 'never'
 		}],
 		'vue/max-attributes-per-line': ['warn', { 
 			singleline: 5
