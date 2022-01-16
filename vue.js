@@ -41,7 +41,8 @@ module.exports = {
 			singleline: 5
 		}],
 		'vue/component-tags-order': ['error', {
-    			'order': [ 'script', 'template', 'style' ]
-		}]
+    	'order': [ 'script', 'template', 'style' ]
+		}],
+		'vue/multi-word-component-names': 'off'
 	},
 }
