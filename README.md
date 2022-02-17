@@ -9,7 +9,7 @@
   <p align="center">
     Personal ESLint configuration for my projects.
   </p>
-  <pre><div align="center">npx apply innocenzi/eslint-config</div></pre>
+  <pre><div align="center">npx @preset/cli innocenzi/config --eslint</div></pre>
 </p>
 
 &nbsp;
@@ -27,7 +27,6 @@ There are three configurations:
 ## Example
 
 ```json
-// eslintrc
 {
 	"extends": "@innocenzi/eslint-config"
 }
