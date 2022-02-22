@@ -75,7 +75,7 @@ module.exports = {
 			'error',
 			{
 				blankLine: 'always',
-				prev: '*',
+				prev: ["block", "block-like", "class"],
 				next: 'return',
 			},
 			{
