@@ -20,6 +20,7 @@ module.exports = {
 
 		'no-redeclare': 'off',
 		'@typescript-eslint/no-redeclare': 'error',
+		'@typescript-eslint/space-infix-ops': ['error', { 'int32Hint': false }],
 
 		// off
 		'@typescript-eslint/camelcase': 'off',
