@@ -71,6 +71,7 @@ module.exports = {
 	],
 	rules: {
 		// import
+		'import/named': 'off', // bugged
 		'import/order': 'error',
 		'import/first': 'error',
 		'import/no-mutable-exports': 'error',
