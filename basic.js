@@ -85,6 +85,7 @@ module.exports = {
 		'quote-props': ['error', 'consistent-as-needed'],
 		'no-unused-vars': 'warn',
 		'no-param-reassign': 'off',
+		'no-undef': 'off', // too many false positivies
 		'array-bracket-spacing': ['error', 'never'],
 		'brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
 		'block-spacing': ['error', 'always'],
