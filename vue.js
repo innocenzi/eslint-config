@@ -43,6 +43,34 @@ module.exports = {
 		'vue/component-tags-order': ['error', {
     	'order': [ 'script', 'template', 'style' ]
 		}],
-		'vue/multi-word-component-names': 'off'
+		'vue/multi-word-component-names': 'off',
+		'vue/array-bracket-spacing': ['error', 'never'],
+		'vue/array-bracket-newline': ['error', {
+			multiline: true,
+			minItems: 3
+		}],
+		'vue/object-curly-spacing': ['error', 'always'],
+		'vue/object-shorthand': ['error', 'always'],
+		'vue/object-curly-newline': [
+			'error',
+			{
+				ObjectExpression: {
+					multiline: true,
+					consistent: true,
+				},
+				ObjectPattern: {
+					multiline: true,
+					consistent: true,
+				},
+				ImportDeclaration: {
+					multiline: true,
+					consistent: true,
+				},
+				ExportDeclaration: {
+					multiline: true,
+					consistent: true,
+				},
+			},
+		]
 	},
 }
