@@ -3,24 +3,19 @@ const basic = require('./basic')
 
 module.exports = {
 	plugins: ['@typescript-eslint', 'unused-imports'],
-	extends: [
-		'@innocenzi/eslint-config/basic',
-		'plugin:@typescript-eslint/recommended',
-	],
+	extends: ['@innocenzi/eslint-config/basic', 'plugin:@typescript-eslint/recommended'],
 	overrides: basic.overrides,
 	rules: {
 		// TS
 		'no-useless-constructor': 'off',
 		'@typescript-eslint/semi': ['error', 'never'],
-		'@typescript-eslint/member-delimiter-style': [
-			'error',
-			{ multiline: { delimiter: 'none' } },
-		],
+		'@typescript-eslint/member-delimiter-style': ['error', { multiline: { delimiter: 'none' } }],
 		'@typescript-eslint/type-annotation-spacing': ['error', {}],
+		'@typescript-eslint/no-unused-vars': 'warn',
 
 		'no-redeclare': 'off',
 		'@typescript-eslint/no-redeclare': 'error',
-		'@typescript-eslint/space-infix-ops': ['error', { 'int32Hint': false }],
+		'@typescript-eslint/space-infix-ops': ['error', { int32Hint: false }],
 
 		// off
 		'@typescript-eslint/camelcase': 'off',
@@ -52,11 +47,11 @@ module.exports = {
 		'no-tabs': 'off',
 		'@typescript-eslint/no-tabs': 'off',
 		'arrow-parens': ['error', 'always'],
-		'indent': 'off',
+		indent: 'off',
 		'@typescript-eslint/indent': ['error', 'tab'],
 		'no-multi-spaces': ['error'],
 		'@typescript-eslint/no-inferrable-types': 'off',
-		'curly': ['error', 'all'],
+		curly: ['error', 'all'],
 		'brace-style': ['error', '1tbs', { allowSingleLine: false }],
 		'object-curly-spacing': 'off',
 		'@typescript-eslint/object-curly-spacing': ['error', 'always'],
@@ -71,12 +66,12 @@ module.exports = {
 			},
 		],
 		'standard/no-callback-literal': 'off',
-		'quotes': ['error', 'single', { avoidEscape: true }],
+		quotes: ['error', 'single', { avoidEscape: true }],
 		'padding-line-between-statements': [
 			'error',
 			{
 				blankLine: 'always',
-				prev: ["block", "block-like", "class"],
+				prev: ['block', 'block-like', 'class'],
 				next: 'return',
 			},
 			{

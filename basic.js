@@ -10,8 +10,12 @@ module.exports = {
 		'plugin:eslint-comments/recommended',
 		'plugin:jsonc/recommended-with-jsonc',
 		'plugin:yml/standard',
+		'plugin:tailwindcss/recommended',
 	],
-	plugins: ['html', 'unicorn'],
+	ignorePatterns: [
+		'resources/types/*.d.ts',
+	],
+	plugins: ['html', 'unicorn', 'tailwindcss'],
 	settings: {
 		'import/resolver': {
 			node: { extensions: ['.js', '.mjs', '.ts', '.d.ts'] },
@@ -22,7 +26,7 @@ module.exports = {
 			files: ['*.json', '*.json5'],
 			parser: 'jsonc-eslint-parser',
 			rules: {
-				'quotes': ['error', 'double'],
+				quotes: ['error', 'double'],
 				'quote-props': ['error', 'always'],
 				'comma-dangle': ['error', 'never'],
 			},
@@ -78,10 +82,13 @@ module.exports = {
 		'import/no-unresolved': 'off',
 		'import/no-absolute-path': 'off',
 
+		// tailwindcss
+		'tailwindcss/no-custom-classname': 'off',
+
 		// Common
-		'semi': ['error', 'never'],
-		'curly': ['error', 'multi-or-nest', 'consistent'],
-		'quotes': ['error', 'single', { avoidEscape: true }],
+		semi: ['error', 'never'],
+		curly: ['error', 'multi-or-nest', 'consistent'],
+		quotes: ['error', 'single', { avoidEscape: true }],
 		'quote-props': ['error', 'consistent-as-needed'],
 		'no-unused-vars': 'warn',
 		'no-param-reassign': 'off',
@@ -89,7 +96,7 @@ module.exports = {
 		'array-bracket-spacing': ['error', 'never'],
 		'brace-style': ['error', 'stroustrup', { allowSingleLine: true }],
 		'block-spacing': ['error', 'always'],
-		'camelcase': 'off',
+		camelcase: 'off',
 		'comma-spacing': [
 			'error',
 			{
@@ -111,7 +118,7 @@ module.exports = {
 				afterColon: true,
 			},
 		],
-		'indent': [
+		indent: [
 			'error',
 			2,
 			{
@@ -120,12 +127,7 @@ module.exports = {
 				outerIIFEBody: 1,
 			},
 		],
-		'no-restricted-syntax': [
-			'error',
-			'DebuggerStatement',
-			'LabeledStatement',
-			'WithStatement',
-		],
+		'no-restricted-syntax': ['error', 'DebuggerStatement', 'LabeledStatement', 'WithStatement'],
 		'object-curly-spacing': ['error', 'always'],
 		'no-return-await': 'off',
 		'space-before-function-paren': ['error', 'never'],
@@ -165,8 +167,8 @@ module.exports = {
 		'array-callback-return': 'error',
 		'block-scoped-var': 'error',
 		'consistent-return': 'off',
-		'complexity': ['off', 11],
-		'eqeqeq': ['error', 'allow-null'],
+		complexity: ['off', 11],
+		eqeqeq: ['error', 'allow-null'],
 		'no-alert': 'warn',
 		'no-case-declarations': 'error',
 		'no-multi-spaces': 'error',
