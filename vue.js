@@ -27,6 +27,7 @@ module.exports = {
 		},
 	],
 	rules: {
+		'vue/no-v-text-v-html-on-component': 'off',
 		'vue/html-indent': ['error', 'tab'],
 		'vue/html-self-closing': ['error', {
 			html: {
