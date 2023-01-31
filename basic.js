@@ -10,12 +10,11 @@ module.exports = {
 		'plugin:eslint-comments/recommended',
 		'plugin:jsonc/recommended-with-jsonc',
 		'plugin:yml/standard',
-		'plugin:tailwindcss/recommended',
 	],
 	ignorePatterns: [
 		'resources/types/*.d.ts',
 	],
-	plugins: ['html', 'unicorn', 'tailwindcss'],
+	plugins: ['html', 'unicorn'],
 	settings: {
 		'import/resolver': {
 			node: { extensions: ['.js', '.mjs', '.ts', '.d.ts'] },
@@ -81,9 +80,6 @@ module.exports = {
 		'import/no-mutable-exports': 'error',
 		'import/no-unresolved': 'off',
 		'import/no-absolute-path': 'off',
-
-		// tailwindcss
-		'tailwindcss/no-custom-classname': 'off',
 
 		// Common
 		semi: ['error', 'never'],
