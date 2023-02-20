@@ -13,6 +13,7 @@
     "basic.js",
     "vue.js",
     "typescript.js",
+		"tailwindcss.js",
     "package.json"
   ],
   "scripts": {
