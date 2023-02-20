@@ -2,9 +2,7 @@ module.exports = {
 	extends: [
 		'plugin:vue/vue3-recommended',
 		'@innocenzi/eslint-config/typescript',
-		'plugin:tailwindcss/recommended',
 	],
-	plugins: ['tailwindcss'],
 	overrides: [
 		{
 			files: ['*.vue'],
@@ -29,9 +27,6 @@ module.exports = {
 		},
 	],
 	rules: {
-		// tailwindcss
-		'tailwindcss/no-custom-classname': 'off',
-
 		'vue/no-v-text-v-html-on-component': 'off',
 		'vue/html-indent': ['error', 'tab'],
 		'vue/html-self-closing': ['error', {
