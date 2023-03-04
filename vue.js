@@ -42,7 +42,7 @@ module.exports = {
 			singleline: 5
 		}],
 		'vue/component-name-in-template-casing': ['error', 'kebab-case', {
-			registeredComponentsOnly: true,
+			registeredComponentsOnly: false,
 			ignores: []
   		}],
 		'vue/component-tags-order': ['error', {
