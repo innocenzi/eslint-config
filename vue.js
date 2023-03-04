@@ -41,8 +41,12 @@ module.exports = {
 		'vue/max-attributes-per-line': ['warn', { 
 			singleline: 5
 		}],
+		'vue/component-name-in-template-casing': ['error', 'kebab-case', {
+    			registeredComponentsOnly: true,
+    			ignores: []
+  		}],
 		'vue/component-tags-order': ['error', {
-    	'order': [ 'script', 'template', 'style' ]
+    			'order': [ 'script', 'template', 'style' ]
 		}],
 		'vue/multi-word-component-names': 'off',
 		'vue/array-bracket-spacing': ['error', 'never'],
