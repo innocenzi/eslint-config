@@ -41,10 +41,12 @@ module.exports = {
 		'vue/max-attributes-per-line': ['warn', { 
 			singleline: 5
 		}],
-		'vue/component-name-in-template-casing': ['error', 'kebab-case', {
+		'vue/component-name-in-template-casing': ['warn', 'kebab-case', {
 			registeredComponentsOnly: false,
-			ignores: []
-  		}],
+			ignores: [
+				"Menu"
+			]
+		}],
 		'vue/component-tags-order': ['error', {
 			'order': [ 'script', 'template', 'style' ]
 		}],
