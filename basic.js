@@ -12,7 +12,7 @@ module.exports = {
 		'plugin:yml/standard',
 	],
 	ignorePatterns: [
-		'resources/types/*.d.ts',
+		'.hybridly/*.d.ts',
 	],
 	plugins: ['html', 'unicorn'],
 	settings: {
