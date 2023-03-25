@@ -11,9 +11,7 @@ module.exports = {
 		'plugin:jsonc/recommended-with-jsonc',
 		'plugin:yml/standard',
 	],
-	ignorePatterns: [
-		'.hybridly/*.d.ts',
-	],
+	ignorePatterns: ['.hybridly/*.d.ts'],
 	plugins: ['html', 'unicorn'],
 	settings: {
 		'import/resolver': {
@@ -30,6 +28,8 @@ module.exports = {
 				'comma-dangle': ['error', 'never'],
 				'jsonc/array-bracket-spacing': ['error'],
 				'jsonc/indent': ['error', 4],
+				'jsonc/comma-dangle': ['error', 'never'],
+				'jsonc/comma-style': ['error', 'last'],
 			},
 		},
 		{
