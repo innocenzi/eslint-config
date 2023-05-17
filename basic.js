@@ -88,7 +88,12 @@ module.exports = {
 		curly: ['error', 'multi-or-nest', 'consistent'],
 		quotes: ['error', 'single', { avoidEscape: true }],
 		'quote-props': ['error', 'consistent-as-needed'],
-		'no-unused-vars': 'warn',
+		'no-unused-vars': ['warn', {
+			vars: 'all',
+			varsIgnorePattern: '^_',
+			args: 'after-used',
+			argsIgnorePattern: '^_',
+		}],
 		'no-param-reassign': 'off',
 		'no-undef': 'off', // too many false positivies
 		'array-bracket-spacing': ['error', 'never'],

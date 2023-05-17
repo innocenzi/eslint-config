@@ -11,7 +11,12 @@ module.exports = {
 		'@typescript-eslint/semi': ['error', 'never'],
 		'@typescript-eslint/member-delimiter-style': ['error', { multiline: { delimiter: 'none' } }],
 		'@typescript-eslint/type-annotation-spacing': ['error', {}],
-		'@typescript-eslint/no-unused-vars': 'warn',
+		'@typescript-eslint/no-unused-vars': ['warn', 			{
+			vars: 'all',
+			varsIgnorePattern: '^_',
+			args: 'after-used',
+			argsIgnorePattern: '^_',
+		}],
 
 		'no-redeclare': 'off',
 		'@typescript-eslint/no-redeclare': 'error',
