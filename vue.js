@@ -58,6 +58,7 @@ module.exports = {
 		}],
 		'vue/object-curly-spacing': ['error', 'always'],
 		'vue/object-shorthand': ['error', 'always'],
+		'vue/no-v-html': 'off',
 		'vue/object-curly-newline': [
 			'error',
 			{

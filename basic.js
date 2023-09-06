@@ -212,5 +212,6 @@ module.exports = {
 			},
 		],
 		'eslint-comments/disable-enable-pair': 'off',
+		'promise/param-names': 'off',
 	},
 }
