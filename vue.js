@@ -54,7 +54,6 @@ module.exports = {
 		'vue/array-bracket-spacing': ['error', 'never'],
 		'vue/array-bracket-newline': ['error', {
 			multiline: true,
-			minItems: 3
 		}],
 		'vue/object-curly-spacing': ['error', 'always'],
 		'vue/object-shorthand': ['error', 'always'],
