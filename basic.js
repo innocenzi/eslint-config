@@ -36,6 +36,7 @@ module.exports = {
 			files: ['package.json'],
 			parser: 'jsonc-eslint-parser',
 			rules: {
+				'jsonc/indent': ['error', 2],
 				'jsonc/sort-keys': [
 					'error',
 					{
