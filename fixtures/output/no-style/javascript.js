@@ -70,3 +70,5 @@ if (a
         ) {
           foo()
         }
+
+if (a) foo()

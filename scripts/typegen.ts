@@ -4,41 +4,41 @@ import { builtinRules } from 'eslint/use-at-your-own-risk'
 import { astro, combine, comments, formatters, imports, javascript, jsdoc, jsonc, markdown, node, perfectionist, react, solid, sortPackageJson, stylistic, svelte, test, toml, typescript, unicorn, unocss, vue, yaml } from '../src'
 
 const configs = await combine(
-  {
-    plugins: {
-      '': {
-        rules: Object.fromEntries(builtinRules.entries()),
-      },
-    },
-  },
-  astro(),
-  comments(),
-  formatters(),
-  imports(),
-  javascript(),
-  jsdoc(),
-  jsonc(),
-  markdown(),
-  node(),
-  perfectionist(),
-  react(),
-  solid(),
-  sortPackageJson(),
-  stylistic(),
-  svelte(),
-  test(),
-  toml(),
-  typescript(),
-  unicorn(),
-  unocss(),
-  vue(),
-  yaml(),
+	{
+		plugins: {
+			'': {
+				rules: Object.fromEntries(builtinRules.entries()),
+			},
+		},
+	},
+	astro(),
+	comments(),
+	formatters(),
+	imports(),
+	javascript(),
+	jsdoc(),
+	jsonc(),
+	markdown(),
+	node(),
+	perfectionist(),
+	react(),
+	solid(),
+	sortPackageJson(),
+	stylistic(),
+	svelte(),
+	test(),
+	toml(),
+	typescript(),
+	unicorn(),
+	unocss(),
+	vue(),
+	yaml(),
 )
 
 const configNames = configs.map(i => i.name).filter(Boolean) as string[]
 
 let dts = await flatConfigsToRulesDTS(configs, {
-  includeAugmentation: false,
+	includeAugmentation: false,
 })
 
 dts += `

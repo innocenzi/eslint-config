@@ -3,67 +3,63 @@ import type { OptionsOverrides, StylisticConfig, TypedFlatConfigItem } from '../
 import { pluginAntfu } from '../plugins'
 
 export const StylisticConfigDefaults: StylisticConfig = {
-  indent: 2,
-  jsx: true,
-  quotes: 'single',
-  semi: false,
+	indent: 'tab',
+	jsx: true,
+	quotes: 'single',
+	semi: false,
 }
 
-export interface StylisticOptions extends StylisticConfig, OptionsOverrides {
-  lessOpinionated?: boolean
-}
+export interface StylisticOptions extends StylisticConfig, OptionsOverrides {}
 
 export async function stylistic(
-  options: StylisticOptions = {},
+	options: StylisticOptions = {},
 ): Promise<TypedFlatConfigItem[]> {
-  const {
-    indent,
-    jsx,
-    lessOpinionated = false,
-    overrides = {},
-    quotes,
-    semi,
-  } = {
-    ...StylisticConfigDefaults,
-    ...options,
-  }
+	const {
+		indent,
+		jsx,
+		overrides = {},
+		quotes,
+		semi,
+	} = {
+		...StylisticConfigDefaults,
+		...options,
+	}
 
-  const pluginStylistic = await interopDefault(import('@stylistic/eslint-plugin'))
+	const pluginStylistic = await interopDefault(import('@stylistic/eslint-plugin'))
 
-  const config = pluginStylistic.configs.customize({
-    flat: true,
-    indent,
-    jsx,
-    pluginName: 'style',
-    quotes,
-    semi,
-  })
+	const config = pluginStylistic.configs.customize({
+		flat: true,
+		indent,
+		jsx,
+		pluginName: 'style',
+		quotes,
+		semi,
+	})
 
-  return [
-    {
-      name: 'antfu/stylistic/rules',
-      plugins: {
-        antfu: pluginAntfu,
-        style: pluginStylistic,
-      },
-      rules: {
-        ...config.rules,
+	return [
+		{
+			name: 'innocenzi/stylistic/rules',
+			plugins: {
+				antfu: pluginAntfu,
+				style: pluginStylistic,
+			},
+			rules: {
+				...config.rules,
 
-        'antfu/consistent-list-newline': 'error',
+				'antfu/consistent-list-newline': 'error',
+				'antfu/top-level-function': 'error',
+				'curly': ['error', 'all'],
+				'style/arrow-parens': ['error', 'always'],
+				'style/brace-style': ['error', '1tbs', { allowSingleLine: false }],
+				'style/no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
+				'style/padding-line-between-statements': [
+					'error',
+					{ blankLine: 'always', next: 'return', prev: ['block', 'block-like', 'class'] },
+					{ blankLine: 'never', next: 'block', prev: 'block' },
+				],
 
-        ...(lessOpinionated
-          ? {
-              curly: ['error', 'all'],
-            }
-          : {
-              'antfu/if-newline': 'error',
-              'antfu/top-level-function': 'error',
-              'curly': ['error', 'multi-or-nest', 'consistent'],
-            }
-        ),
-
-        ...overrides,
-      },
-    },
-  ]
+				...overrides,
+			},
+		},
+	]
 }

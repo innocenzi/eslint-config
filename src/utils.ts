@@ -3,32 +3,32 @@ import { isPackageExists } from 'local-pkg'
 import type { Awaitable, TypedFlatConfigItem } from './types'
 
 export const parserPlain = {
-  meta: {
-    name: 'parser-plain',
-  },
-  parseForESLint: (code: string) => ({
-    ast: {
-      body: [],
-      comments: [],
-      loc: { end: code.length, start: 0 },
-      range: [0, code.length],
-      tokens: [],
-      type: 'Program',
-    },
-    scopeManager: null,
-    services: { isPlain: true },
-    visitorKeys: {
-      Program: [],
-    },
-  }),
+	meta: {
+		name: 'parser-plain',
+	},
+	parseForESLint: (code: string) => ({
+		ast: {
+			body: [],
+			comments: [],
+			loc: { end: code.length, start: 0 },
+			range: [0, code.length],
+			tokens: [],
+			type: 'Program',
+		},
+		scopeManager: null,
+		services: { isPlain: true },
+		visitorKeys: {
+			Program: [],
+		},
+	}),
 }
 
 /**
  * Combine array and non-array configs into a single array.
  */
 export async function combine(...configs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[]>[]): Promise<TypedFlatConfigItem[]> {
-  const resolved = await Promise.all(configs)
-  return resolved.flat()
+	const resolved = await Promise.all(configs)
+	return resolved.flat()
 }
 
 /**
@@ -37,7 +37,7 @@ export async function combine(...configs: Awaitable<TypedFlatConfigItem | TypedF
  *
  * @example
  * ```ts
- * import { renameRules } from '@antfu/eslint-config'
+ * import { renameRules } from '@innocenzi/eslint-config'
  *
  * export default [{
  *   rules: renameRules(
@@ -50,16 +50,18 @@ export async function combine(...configs: Awaitable<TypedFlatConfigItem | TypedF
  * ```
  */
 export function renameRules(rules: Record<string, any>, map: Record<string, string>) {
-  return Object.fromEntries(
-    Object.entries(rules)
-      .map(([key, value]) => {
-        for (const [from, to] of Object.entries(map)) {
-          if (key.startsWith(`${from}/`))
-            return [to + key.slice(from.length), value]
-        }
-        return [key, value]
-      }),
-  )
+	return Object.fromEntries(
+		Object.entries(rules)
+			.map(([key, value]) => {
+				for (const [from, to] of Object.entries(map)) {
+					if (key.startsWith(`${from}/`)) {
+						return [to + key.slice(from.length), value]
+					}
+				}
+
+				return [key, value]
+			}),
+	)
 }
 
 /**
@@ -67,7 +69,7 @@ export function renameRules(rules: Record<string, any>, map: Record<string, stri
  *
  * @example
  * ```ts
- * import { renamePluginInConfigs } from '@antfu/eslint-config'
+ * import { renamePluginInConfigs } from '@innocenzi/eslint-config'
  * import someConfigs from './some-configs'
  *
  * export default renamePluginInConfigs(someConfigs, {
@@ -77,45 +79,52 @@ export function renameRules(rules: Record<string, any>, map: Record<string, stri
  * ```
  */
 export function renamePluginInConfigs(configs: TypedFlatConfigItem[], map: Record<string, string>): TypedFlatConfigItem[] {
-  return configs.map((i) => {
-    const clone = { ...i }
-    if (clone.rules)
-      clone.rules = renameRules(clone.rules, map)
-    if (clone.plugins) {
-      clone.plugins = Object.fromEntries(
-        Object.entries(clone.plugins)
-          .map(([key, value]) => {
-            if (key in map)
-              return [map[key], value]
-            return [key, value]
-          }),
-      )
-    }
-    return clone
-  })
+	return configs.map((i) => {
+		const clone = { ...i }
+		if (clone.rules) {
+			clone.rules = renameRules(clone.rules, map)
+		}
+		if (clone.plugins) {
+			clone.plugins = Object.fromEntries(
+				Object.entries(clone.plugins)
+					.map(([key, value]) => {
+						if (key in map) {
+							return [map[key], value]
+						}
+
+						return [key, value]
+					}),
+			)
+		}
+
+		return clone
+	})
 }
 
 export function toArray<T>(value: T | T[]): T[] {
-  return Array.isArray(value) ? value : [value]
+	return Array.isArray(value) ? value : [value]
 }
 
 export async function interopDefault<T>(m: Awaitable<T>): Promise<T extends { default: infer U } ? U : T> {
-  const resolved = await m
-  return (resolved as any).default || resolved
+	const resolved = await m
+	return (resolved as any).default || resolved
 }
 
 export async function ensurePackages(packages: (string | undefined)[]) {
-  if (process.env.CI || process.stdout.isTTY === false)
-    return
+	if (process.env.CI || process.stdout.isTTY === false) {
+		return
+	}
 
-  const nonExistingPackages = packages.filter(i => i && !isPackageExists(i)) as string[]
-  if (nonExistingPackages.length === 0)
-    return
+	const nonExistingPackages = packages.filter(i => i && !isPackageExists(i)) as string[]
+	if (nonExistingPackages.length === 0) {
+		return
+	}
 
-  const p = await import('@clack/prompts')
-  const result = await p.confirm({
-    message: `${nonExistingPackages.length === 1 ? 'Package is' : 'Packages are'} required for this config: ${nonExistingPackages.join(', ')}. Do you want to install them?`,
-  })
-  if (result)
-    await import('@antfu/install-pkg').then(i => i.installPackage(nonExistingPackages, { dev: true }))
+	const p = await import('@clack/prompts')
+	const result = await p.confirm({
+		message: `${nonExistingPackages.length === 1 ? 'Package is' : 'Packages are'} required for this config: ${nonExistingPackages.join(', ')}. Do you want to install them?`,
+	})
+	if (result) {
+		await import('@antfu/install-pkg').then(i => i.installPackage(nonExistingPackages, { dev: true }))
+	}
 }

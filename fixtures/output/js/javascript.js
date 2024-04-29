@@ -70,3 +70,5 @@ if (a
   || (d && b)
 )
   foo()
+
+if (a) foo()
