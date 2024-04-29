@@ -7,23 +7,23 @@ const counter = ref<number | 1>(0)
 
 // Define a function
 function incrementCounter() {
-  counter.value++
+	counter.value++
 }
 </script>
 
 <template>
-  <div>
-    <h1>{{ greeting }}</h1>
-    <button @click="incrementCounter">
-      Click me!
-    </button>
-    <p>Counter: {{ counter }}</p>
-  </div>
+	<div>
+		<h1>{{ greeting }}</h1>
+		<button @click="incrementCounter">
+			Click me!
+		</button>
+		<p>Counter: {{ counter }}</p>
+	</div>
 </template>
 
 <style>
 .a {
-  color: red;
+	color: red;
 }
 </style>
 
@@ -32,7 +32,7 @@ $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
+	font: 100% $font-stack;
+	color: $primary-color;
 }
 </style>

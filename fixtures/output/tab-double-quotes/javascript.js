@@ -47,13 +47,12 @@ log(newNumbers)
 try {
 	// Attempt to parse an invalid JSON string
 	JSON.parse("invalid JSON")
-}
-catch (error) {
+} catch (error) {
 	console.error("Error parsing JSON:", error.message)
 }
 
 // Use a ternary conditional operator
-const isEven = num => num % 2 === 0
+const isEven = (num) => num % 2 === 0
 const number = 7
 log(`${number} is ${isEven(number) ? "even" : "odd"}.`)
 
@@ -68,7 +67,10 @@ if (a
 	|| b
 	|| c || d
 	|| (d && b)
-)
+) {
 	foo()
+}
 
-if (a) foo()
+if (a) {
+	foo()
+}
