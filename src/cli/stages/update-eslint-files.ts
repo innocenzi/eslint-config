@@ -55,7 +55,7 @@ export async function updateEslintFiles(result: PromtResult) {
 		configLines.push(`${framework}: true,`)
 	}
 
-	const mainConfig = configLines.map(i => `  ${i}`).join('\n')
+	const mainConfig = configLines.map((i) => `  ${i}`).join('\n')
 	const additionalConfig: string[] = []
 
 	const eslintConfigContent: string = getEslintConfigContent(mainConfig, additionalConfig)

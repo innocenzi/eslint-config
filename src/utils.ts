@@ -115,7 +115,7 @@ export async function ensurePackages(packages: (string | undefined)[]) {
 		return
 	}
 
-	const nonExistingPackages = packages.filter(i => i && !isPackageExists(i)) as string[]
+	const nonExistingPackages = packages.filter((i) => i && !isPackageExists(i)) as string[]
 	if (nonExistingPackages.length === 0) {
 		return
 	}
@@ -125,6 +125,6 @@ export async function ensurePackages(packages: (string | undefined)[]) {
 		message: `${nonExistingPackages.length === 1 ? 'Package is' : 'Packages are'} required for this config: ${nonExistingPackages.join(', ')}. Do you want to install them?`,
 	})
 	if (result) {
-		await import('@antfu/install-pkg').then(i => i.installPackage(nonExistingPackages, { dev: true }))
+		await import('@antfu/install-pkg').then((i) => i.installPackage(nonExistingPackages, { dev: true }))
 	}
 }

@@ -44,7 +44,7 @@ export async function markdown(
 		{
 			files: [
 				GLOB_MARKDOWN_CODE,
-				...componentExts.map(ext => `${GLOB_MARKDOWN}/**/*.${ext}`),
+				...componentExts.map((ext) => `${GLOB_MARKDOWN}/**/*.${ext}`),
 			],
 			languageOptions: {
 				parserOptions: {

@@ -18,7 +18,7 @@ const instance = yargs(hideBin(process.argv))
 	.command(
 		'*',
 		'Run the initialization or migration',
-		args => args
+		(args) => args
 			.option('yes', {
 				alias: 'y',
 				description: 'Skip prompts and use default values',

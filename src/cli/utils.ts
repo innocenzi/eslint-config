@@ -18,6 +18,6 @@ import defineEslintConfig from '@innocenzi/eslint-config'
 
 export default defineEslintConfig({
 ${mainConfig}
-}${additionalConfigs?.map(config => `,{\n${config}\n}`)})
+}${additionalConfigs?.map((config) => `,{\n${config}\n}`)})
 `.trimStart()
 }

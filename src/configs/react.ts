@@ -48,9 +48,9 @@ export async function react(
 		interopDefault(import('@typescript-eslint/parser')),
 	] as const)
 
-	const isAllowConstantExport = ReactRefreshAllowConstantExportPackages.some(i => isPackageExists(i))
-	const isUsingRemix = RemixPackages.some(i => isPackageExists(i))
-	const isUsingNext = NextJsPackages.some(i => isPackageExists(i))
+	const isAllowConstantExport = ReactRefreshAllowConstantExportPackages.some((i) => isPackageExists(i))
+	const isUsingRemix = RemixPackages.some((i) => isPackageExists(i))
+	const isUsingNext = NextJsPackages.some((i) => isPackageExists(i))
 
 	const plugins = pluginReact.configs.all.plugins
 
