@@ -7,7 +7,7 @@
   <br />
   <br />
   <p align="center">
-    Personal ESLint configuration for my projects.
+    Personal eslint configuration for my projects.
   </p>
   <pre><div align="center">npx @preset/cli innocenzi/config --eslint</div></pre>
 </p>
@@ -16,24 +16,15 @@
 
 ## Usage
 
-There are three configurations:
+```ts
+// eslint.config.mjs
+import defineEslintConfig from '@antfu/eslint-config'
 
-- `@innocenzi/eslint-config/typescript` - This is the default, for TypeScript projects.
-- `@innocenzi/eslint-config/vue` - It extends the TypeScript one, for Vue projects.
-- `@innocenzi/eslint-config/basic` - If I ever do something without TypeScript.
-
-&nbsp;
-
-## Example
-
-```json
-{
-	"extends": "@innocenzi/eslint-config"
-}
+export default defineEslintConfig()
 ```
 
 &nbsp;
 
 ## Credits
 
-Most of the configuration comes from [`@antfu/eslint-config`](https://github.com/antfu/eslint-config). I've been using this for a while with a superset of my own rules, so I've decided to make my own reusable configuration.
+This configuration is a fork of Anthony's Fu [`eslint-config`](https://github.com/antfu/eslint-config), with my own rules in it. I've been using it for a while with a superset of my own rules, so I've decided to make my own reusable configuration.
