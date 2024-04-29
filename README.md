@@ -18,7 +18,7 @@
 
 ```ts
 // eslint.config.mjs
-import defineEslintConfig from '@antfu/eslint-config'
+import defineEslintConfig from '@innocenzi/eslint-config'
 
 export default defineEslintConfig()
 ```
