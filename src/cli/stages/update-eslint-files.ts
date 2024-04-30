@@ -1,6 +1,5 @@
 import fs from 'node:fs'
 import fsp from 'node:fs/promises'
-import process from 'node:process'
 import path from 'node:path'
 import c from 'picocolors'
 import * as p from '@clack/prompts'

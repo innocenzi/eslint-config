@@ -1,7 +1,6 @@
 /* eslint-disable perfectionist/sort-objects */
 import fs from 'node:fs'
 import path from 'node:path'
-import process from 'node:process'
 import c from 'picocolors'
 import * as p from '@clack/prompts'
 
