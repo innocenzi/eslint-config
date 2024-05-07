@@ -7,7 +7,6 @@ export async function javascript(
 	options: OptionsIsInEditor & OptionsOverrides = {},
 ): Promise<TypedFlatConfigItem[]> {
 	const {
-		isInEditor = false,
 		overrides = {},
 	} = options
 

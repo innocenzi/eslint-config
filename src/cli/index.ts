@@ -8,7 +8,7 @@ import { pkgJson } from './constants'
 function header() {
 	// eslint-disable-next-line no-console
 	console.log('\n')
-	p.intro(`${c.green(`@innocenzi/eslint-config `)}${c.dim(`v${pkgJson.version}`)}`)
+	p.intro(`${c.green('@innocenzi/eslint-config ')}${c.dim(`v${pkgJson.version}`)}`)
 }
 
 const instance = yargs(hideBin(process.argv))

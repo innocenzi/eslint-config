@@ -66,5 +66,5 @@ export async function updatePackageJson(result: PromtResult) {
 	}
 
 	await fsp.writeFile(pathPackageJSON, JSON.stringify(pkg, null, 2))
-	p.log.success(c.green(`Changes wrote to package.json`))
+	p.log.success(c.green('Changes wrote to package.json'))
 }

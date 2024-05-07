@@ -32,7 +32,7 @@ export async function run(options: CliRunOptions = {}) {
 	const argExtra = <ExtraLibrariesOption[]>options.extra?.map((m) => m.trim())
 
 	if (fs.existsSync(path.join(process.cwd(), 'eslint.config.js'))) {
-		p.log.warn(c.yellow(`eslint.config.js already exists, migration wizard exited.`))
+		p.log.warn(c.yellow('eslint.config.js already exists, migration wizard exited.'))
 		return process.exit(1)
 	}
 
@@ -117,6 +117,6 @@ export async function run(options: CliRunOptions = {}) {
 	await updateEslintFiles(result)
 	await updateVscodeSettings(result)
 
-	p.log.success(c.green(`Setup completed`))
+	p.log.success(c.green('Setup completed'))
 	p.outro(`Now you can update the dependencies and run ${c.blue('eslint . --fix')}\n`)
 }

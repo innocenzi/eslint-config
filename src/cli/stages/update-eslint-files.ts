@@ -22,7 +22,7 @@ export async function updateEslintFiles(result: PromtResult) {
 
 	const eslintIgnores: string[] = []
 	if (fs.existsSync(pathESLintIgnore)) {
-		p.log.step(c.cyan(`Migrating existing .eslintignore`))
+		p.log.step(c.cyan('Migrating existing .eslintignore'))
 		const content = await fsp.readFile(pathESLintIgnore, 'utf-8')
 		const parsed = parse(content)
 		const globs = parsed.globs()
@@ -43,11 +43,11 @@ export async function updateEslintFiles(result: PromtResult) {
 	}
 
 	if (result.extra.includes('formatter')) {
-		configLines.push(`formatters: true,`)
+		configLines.push('formatters: true,')
 	}
 
 	if (result.extra.includes('unocss')) {
-		configLines.push(`unocss: true,`)
+		configLines.push('unocss: true,')
 	}
 
 	for (const framework of result.frameworks) {

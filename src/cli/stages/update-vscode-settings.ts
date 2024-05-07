@@ -23,7 +23,7 @@ export async function updateVscodeSettings(result: PromtResult) {
 
 	if (!fs.existsSync(settingsPath)) {
 		await fsp.writeFile(settingsPath, `{${vscodeSettingsString}}\n`, 'utf-8')
-		p.log.success(c.green(`Created .vscode/settings.json`))
+		p.log.success(c.green('Created .vscode/settings.json'))
 	} else {
 		let settingsContent = await fsp.readFile(settingsPath, 'utf8')
 
@@ -32,6 +32,6 @@ export async function updateVscodeSettings(result: PromtResult) {
 		settingsContent += `${vscodeSettingsString}}\n`
 
 		await fsp.writeFile(settingsPath, settingsContent, 'utf-8')
-		p.log.success(c.green(`Updated .vscode/settings.json`))
+		p.log.success(c.green('Updated .vscode/settings.json'))
 	}
 }
