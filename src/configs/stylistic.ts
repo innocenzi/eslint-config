@@ -57,6 +57,7 @@ export async function stylistic(
 					{ blankLine: 'always', next: 'return', prev: ['block', 'block-like', 'class'] },
 					{ blankLine: 'never', next: 'block', prev: 'block' },
 				],
+				'style/quotes': ['error', 'single', 'avoid-escape'],
 
 				...overrides,
 			},
