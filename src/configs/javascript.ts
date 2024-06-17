@@ -49,7 +49,7 @@ export async function javascript(
 				'dot-notation': ['error', { allowKeywords: true }],
 				'eqeqeq': ['error', 'smart'],
 				'new-cap': ['error', { capIsNew: false, newIsCap: true, properties: true }],
-				'no-alert': 'error',
+				'no-alert': 'off',
 				'no-array-constructor': 'error',
 				'no-async-promise-executor': 'error',
 				'no-caller': 'error',
