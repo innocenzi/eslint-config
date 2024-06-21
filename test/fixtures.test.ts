@@ -1,5 +1,5 @@
 import { join, resolve } from 'node:path'
-import { afterAll, beforeAll, it } from 'vitest'
+import { afterAll, beforeAll, test } from 'vitest'
 import fs from 'fs-extra'
 import { execa } from 'execa'
 import fg from 'fast-glob'
@@ -83,7 +83,7 @@ runWithConfig(
 )
 
 function runWithConfig(name: string, configs: OptionsConfig, ...items: TypedFlatConfigItem[]) {
-	it.concurrent(name, async ({ expect }) => {
+	test.concurrent(name, async ({ expect }) => {
 		const from = resolve('fixtures/input')
 		const output = resolve('fixtures/output', name)
 		const target = resolve('_fixtures', name)

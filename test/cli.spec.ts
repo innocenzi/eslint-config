@@ -1,7 +1,7 @@
 import { join } from 'node:path'
 import { execa } from 'execa'
 import fs from 'fs-extra'
-import { afterAll, beforeEach, expect, it } from 'vitest'
+import { afterAll, beforeEach, expect, test } from 'vitest'
 
 const CLI_PATH = join(__dirname, '../bin/index.js')
 const genPath = join(__dirname, '..', '.temp', randomStr())
@@ -39,7 +39,7 @@ async function createMockDir() {
 beforeEach(async () => await createMockDir())
 afterAll(async () => await fs.rm(genPath, { recursive: true, force: true }))
 
-it('package.json updated', async () => {
+test('package.json updated', async () => {
 	const { stdout } = await run()
 
 	const pkgContent: Record<string, any> = await fs.readJSON(join(genPath, 'package.json'))
@@ -48,7 +48,7 @@ it('package.json updated', async () => {
 	expect(stdout).toContain('Changes wrote to package.json')
 })
 
-it('esm eslint.config.js', async () => {
+test('esm eslint.config.js', async () => {
 	const pkgContent = await fs.readFile('package.json', 'utf-8')
 	await fs.writeFile(join(genPath, 'package.json'), JSON.stringify({ ...JSON.parse(pkgContent), type: 'module' }, null, 2))
 
@@ -59,7 +59,7 @@ it('esm eslint.config.js', async () => {
 	expect(stdout).toContain('Created eslint.config.js')
 })
 
-it('cjs eslint.config.mjs', async () => {
+test('cjs eslint.config.mjs', async () => {
 	const { stdout } = await run()
 
 	const eslintConfigContent = await fs.readFile(join(genPath, 'eslint.config.mjs'), 'utf-8')
@@ -67,7 +67,7 @@ it('cjs eslint.config.mjs', async () => {
 	expect(stdout).toContain('Created eslint.config.mjs')
 })
 
-it('ignores files added in eslint.config.js', async () => {
+test('ignores files added in eslint.config.js', async () => {
 	const { stdout } = await run()
 
 	const eslintConfigContent = (await fs.readFile(join(genPath, 'eslint.config.mjs'), 'utf-8')).replace(/\\/g, '/')
@@ -84,7 +84,7 @@ it('ignores files added in eslint.config.js', async () => {
     `)
 })
 
-it('suggest remove unnecessary files', async () => {
+test('suggest remove unnecessary files', async () => {
 	const { stdout } = await run()
 
 	expect(stdout).toContain('You can now remove those files manually')
