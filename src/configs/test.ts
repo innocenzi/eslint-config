@@ -45,7 +45,7 @@ export async function test(
 			rules: {
 				'node/prefer-global/process': 'off',
 
-				'test/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }],
+				'test/consistent-test-it': ['error', { fn: 'test', withinDescribe: 'it' }],
 				'test/no-identical-title': 'error',
 				'test/no-import-node-test': 'error',
 				'test/no-only-tests': isInEditor ? 'off' : 'error',
