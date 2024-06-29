@@ -103,6 +103,9 @@ export async function markdown(
 					'ts/unbound-method': 'off',
 				},
 
+				// Disable new lines on html elements for [!code] comments
+				'vue/multiline-html-element-content-newline': 'off',
+
 				...overrides,
 			},
 		},
