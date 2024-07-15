@@ -131,6 +131,7 @@ export async function vue(
 				}],
 				'vue/max-attributes-per-line': ['error', { multiline: 1, singleline: 3 }],
 				'vue/multi-word-component-names': 'off',
+				'vue/no-deprecated-slot-attribute': 'off',
 				'vue/no-dupe-keys': 'off',
 				'vue/no-empty-pattern': 'error',
 				'vue/no-irregular-whitespace': 'error',
