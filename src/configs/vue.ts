@@ -111,7 +111,7 @@ export async function vue(
 				'vue/component-options-name-casing': ['error', 'PascalCase'],
 				// this is deprecated
 				'vue/component-tags-order': 'off',
-				'vue/custom-event-name-casing': ['error', 'camelCase'],
+				'vue/custom-event-name-casing': ['error', 'kebab-case'],
 				'vue/define-macros-order': ['error', {
 					order: ['defineOptions', 'defineProps', 'defineEmits', 'defineSlots'],
 				}],
