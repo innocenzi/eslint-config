@@ -4,11 +4,12 @@ import { GLOB_MARKDOWN, GLOB_MARKDOWN_CODE, GLOB_MARKDOWN_IN_MARKDOWN } from '..
 import { interopDefault, parserPlain } from '../utils'
 
 export async function markdown(
-	options: OptionsFiles & OptionsComponentExts & OptionsOverrides = {},
+	options: { ignoreMarkdownBlocksExts?: string[] } & OptionsFiles & OptionsComponentExts & OptionsOverrides = {},
 ): Promise<TypedFlatConfigItem[]> {
 	const {
 		componentExts = [],
 		files = [GLOB_MARKDOWN],
+		ignoreMarkdownBlocksExts = [],
 		overrides = {},
 	} = options
 
@@ -24,7 +25,10 @@ export async function markdown(
 		},
 		{
 			files,
-			ignores: [GLOB_MARKDOWN_IN_MARKDOWN],
+			ignores: [
+				GLOB_MARKDOWN_IN_MARKDOWN,
+				...ignoreMarkdownBlocksExts.map((ext) => `${GLOB_MARKDOWN}/*.${ext}`),
+			],
 			name: 'innocenzi/markdown/processor',
 			// `eslint-plugin-markdown` only creates virtual files for code blocks,
 			// but not the markdown file itself. We use `eslint-merge-processors` to
