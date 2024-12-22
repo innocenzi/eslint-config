@@ -156,6 +156,10 @@ export interface OptionsOverrides {
 	overrides?: TypedFlatConfigItem['rules']
 }
 
+export interface MarkdownOptions {
+	ignoreMarkdownBlocksExts?: string[]
+}
+
 export interface OptionsIsInEditor {
 	isInEditor?: boolean
 }
@@ -265,7 +269,7 @@ export interface OptionsConfig extends OptionsComponentExts {
 	 *
 	 * @default true
 	 */
-	markdown?: boolean | OptionsOverrides
+	markdown?: boolean | OptionsOverrides | MarkdownOptions
 
 	/**
 	 * Enable stylistic rules.

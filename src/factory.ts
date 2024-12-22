@@ -249,6 +249,7 @@ export function defineEslintConfig(
 				{
 					componentExts,
 					overrides: getOverrides(options, 'markdown'),
+					...(typeof options.markdown === 'object' ? options.markdown : {}),
 				},
 			),
 		)
