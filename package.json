@@ -1,7 +1,7 @@
 {
   "name": "@innocenzi/eslint-config",
   "type": "module",
-  "version": "0.22.6",
+  "version": "0.22.7",
   "packageManager": "pnpm@9.3.0",
   "author": "Enzo Innocenzi <enzo@innocenzi.dev>",
   "license": "MIT",
