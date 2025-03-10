@@ -53,7 +53,7 @@ export async function toml(
 					? {
 							'toml/array-bracket-newline': 'error',
 							'toml/array-bracket-spacing': ['error', 'never'],
-							'toml/array-element-newline': 'error',
+							'toml/array-element-newline': 'off',
 							'toml/indent': ['error', indent === 'tab' ? 2 : indent],
 							'toml/inline-table-curly-spacing': 'error',
 							'toml/key-spacing': 'error',
